@@ -1,0 +1,115 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net6.0-windows</TargetFramework>
+    <Nullable>enable</Nullable>
+    <UseWindowsForms>true</UseWindowsForms>
+    <ImplicitUsings>enable</ImplicitUsings>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="Windows\Resources\Icons\Configure_64px.png" />
+    <None Remove="Windows\Resources\Icons\Exit_20px.png" />
+    <None Remove="Windows\Resources\Icons\Exit_35px_RED.png" />
+    <None Remove="Windows\Resources\Icons\Globe_20px.png" />
+    <None Remove="Windows\Resources\Icons\Less Than_35px.png" />
+    <None Remove="Windows\Resources\Icons\Merge Git_20px.png" />
+    <None Remove="Windows\Resources\Icons\More Than_35px.png" />
+    <None Remove="Windows\Resources\Icons\NewPlay.png" />
+    <None Remove="Windows\Resources\Icons\Play_18px.png" />
+    <None Remove="Windows\Resources\Icons\Play_20px.png" />
+    <None Remove="Windows\Resources\Icons\Play_35px.png" />
+    <None Remove="Windows\Resources\Icons\Play_35px_GREEN.png" />
+    <None Remove="Windows\Resources\Icons\Save_18px.png" />
+    <None Remove="Windows\Resources\Icons\Save_20px.png" />
+    <None Remove="Windows\Resources\Icons\Save_35px.png" />
+    <None Remove="Windows\Resources\Icons\Settings_35px.png" />
+    <None Remove="Windows\Resources\Icons\Slider _20px.png" />
+    <None Remove="Windows\Resources\Icons\Team_20px.png" />
+    <None Remove="Windows\Resources\Icons\template.jpg" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Windows\Resources\Icons\Configure_64px.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Windows\Resources\Icons\template.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Windows\Resources\Icons\Exit_20px.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Windows\Resources\Icons\Exit_35px_RED.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Windows\Resources\Icons\Globe_20px.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Windows\Resources\Icons\Less Than_35px.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Windows\Resources\Icons\Merge Git_20px.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Windows\Resources\Icons\More Than_35px.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Windows\Resources\Icons\NewPlay.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Windows\Resources\Icons\Play_18px.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Windows\Resources\Icons\Play_20px.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Windows\Resources\Icons\Play_35px.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Windows\Resources\Icons\Play_35px_GREEN.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Windows\Resources\Icons\Save_18px.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Windows\Resources\Icons\Save_20px.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Windows\Resources\Icons\Save_35px.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Windows\Resources\Icons\Settings_35px.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Windows\Resources\Icons\Slider _20px.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Windows\Resources\Icons\Team_20px.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Update="Properties\Resources.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Update="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\CodeDesigner.Core\CodeDesigner.Core.csproj" />
+  </ItemGroup>
+
+</Project>

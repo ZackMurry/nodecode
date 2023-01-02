@@ -1,0 +1,43 @@
+version: '2'
+
+services:
+  nodecode_backend:
+    image: 'zackmurry/nodecode-backend:latest'
+    build:
+      context: .
+    container_name: nodecode_backend
+    depends_on:
+      - nodecode_db
+    environment:
+      - SPRING_DATASOURCE_URL=${DB_URL}
+      - SPRING_DATASOURCE_USERNAME=${DB_USERNAME}
+      - SPRING_DATASOURCE_PASSWORD=${DB_PASSWORD}
+      - SPRING_GITHUB_CLIENT_ID=${GITHUB_CLIENT_ID}
+      - SPRING_GITHUB_CLIENT_SECRET=${GITHUB_CLIENT_SECRET}
+      - SPRING_GITHUB_REDIRECT_URI=${GITHUB_REDIRECT_URI}
+      - SPRING_JPA_HIBERNATE_DDL_AUTO=update
+    ports:
+      - 8080:8080
+  nodecode_db:
+    image: 'postgres:13.1-alpine'
+    container_name: nodecode_db
+    environment:
+      - POSTGRES_USER=${DB_USERNAME}
+      - POSTGRES_PASSWORD=${DB_PASSWORD}
+      - POSTGRES_DB=nodecode
+    ports:
+      - 5432:5432
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+  nodecode_frontend:
+    image: 'zackmurry/nodecode-frontend:latest'
+    build:
+      context: .
+    container_name: nodecode_frontend
+    depends_on:
+      - nodecode_backend
+    ports:
+      - 3000:3000
+volumes:
+  pgdata:
+

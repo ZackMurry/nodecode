@@ -1,0 +1,31 @@
+app:
+  datasource:
+    jdbc-url: jdbc:postgresql://localhost:5432/nodecode
+    username: ${POSTGRES_USERNAME} # PostgreSQL username
+    password: ${POSTGRES_PASSWORD} # PostgreSQL password
+    pool-size: 30
+  upload:
+    dir: ${user.home}/nodecode_uploads
+spring:
+  flyway:
+    baseline-on-migrate: true
+  security:
+    oauth2:
+      client:
+        registration:
+          github:
+            clientId: ${NODECODE_GITHUB_CLIENT_ID}
+            clientSecret: ${NODECODE_GITHUB_CLIENT_SECRET}
+            redirectUri: "http://localhost/api/v1/oauth2/callback/github"
+            scope:
+              - user:email
+              - read:user
+  application:
+    name: Nodecode Development Server
+  banner:
+    location: classpath:static/banner-dev.txt
+logging:
+  level:
+    org:
+      springframework:
+        security: DEBUG

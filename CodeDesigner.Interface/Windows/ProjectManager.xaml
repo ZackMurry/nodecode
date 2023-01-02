@@ -1,0 +1,58 @@
+﻿<Window x:Name="ProjectManagerWindow" x:Class="CodeDesigner.Interface.Windows.ProjectManager"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:CodeDesigner.Interface.Windows"
+        mc:Ignorable="d"
+        Title="Project Manager" Height="175" Width="360" WindowStyle="None" ResizeMode="NoResize" WindowStartupLocation="Manual" Background="{x:Null}" AllowsTransparency="true" MouseEnter="MouseEntered" MouseLeave="MouseLeft" MouseMove="ProjectManagerWindow_MouseMove">
+    <Window.Clip>
+        <RectangleGeometry Rect="0,0,360,175" RadiusX="25" RadiusY="25"/>
+    </Window.Clip>
+
+    <StackPanel Background="#FF181D27">
+        <Label Content="Project Manager" HorizontalAlignment="Center" Margin="0,20,0,0" FontSize="16" FontWeight="Normal" FontFamily="Montserrat ExtraBold" Foreground="White" FontStretch="Normal"/>
+        <Button Content="Open Existing Project" Margin="40,20,40,0" Height="33" BorderBrush="{x:Null}" Foreground="White" FontFamily="Montserrat" FontWeight="Bold" Click="OpenButtonPressed">
+            <Button.Resources>
+                <Style TargetType="Border">
+                    <Setter Property="CornerRadius" Value="10"/>
+                </Style>
+            </Button.Resources>
+            <Button.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <LinearGradientBrush.RelativeTransform>
+                        <TransformGroup>
+                            <ScaleTransform CenterY="0.5" CenterX="0.5"/>
+                            <SkewTransform CenterX="0.5" CenterY="0.5"/>
+                            <RotateTransform Angle="-70.56" CenterX="0.5" CenterY="0.5"/>
+                            <TranslateTransform/>
+                        </TransformGroup>
+                    </LinearGradientBrush.RelativeTransform>
+                    <GradientStop Color="#FF222731"/>
+                    <GradientStop Color="#FF2C313B" Offset="1"/>
+                </LinearGradientBrush>
+            </Button.Background>
+        </Button>
+        <Button Content="Create New Project" Margin="40,10,40,0" Height="33" BorderBrush="{x:Null}" Foreground="White" FontFamily="Montserrat" FontWeight="Bold" Click="CreateButtonPressed">
+            <Button.Resources>
+                <Style TargetType="Border">
+                    <Setter Property="CornerRadius" Value="10"/>
+                </Style>
+            </Button.Resources>
+            <Button.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <LinearGradientBrush.RelativeTransform>
+                        <TransformGroup>
+                            <ScaleTransform CenterY="0.5" CenterX="0.5"/>
+                            <SkewTransform CenterX="0.5" CenterY="0.5"/>
+                            <RotateTransform Angle="-70.56" CenterX="0.5" CenterY="0.5"/>
+                            <TranslateTransform/>
+                        </TransformGroup>
+                    </LinearGradientBrush.RelativeTransform>
+                    <GradientStop Color="#FF222731"/>
+                    <GradientStop Color="#FF2C313B" Offset="1"/>
+                </LinearGradientBrush>
+            </Button.Background>
+        </Button>
+    </StackPanel>
+</Window>
